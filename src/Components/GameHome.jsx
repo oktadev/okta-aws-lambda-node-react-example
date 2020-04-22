@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Row, Col, Table, Button } from "react-bootstrap";
 
 const GameHome = ( { newGameClick, highScores, submitHighScore } ) => {
