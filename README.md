@@ -1,6 +1,6 @@
 # Okta AWS Lambda React Example
 
-This is an example project for the ["How to Build a Secure AWS Lambda API with Node.js and React"]() blog post.
+This is an example project for the ["How to Build a Secure AWS Lambda API with Node.js and React"](https://developer.okta.com/blog/2020/04/22/build-secure-aws-lambda-nodejs-react) blog post.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
