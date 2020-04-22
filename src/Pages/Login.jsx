@@ -1,18 +1,18 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
-import LoginForm from '../Components/LoginForm'
-import { useOktaAuth } from '@okta/okta-react';
-import { Container } from 'react-bootstrap'
-import Header from '../Components/Header'
+import React from "react";
+import { Redirect } from "react-router-dom";
+import LoginForm from "../Components/LoginForm";
+import { useOktaAuth } from "@okta/okta-react";
+import { Container } from "react-bootstrap";
+import Header from "../Components/Header";
 
-const Login = ({ baseUrl, issuer }) => {
+const Login = ( { baseUrl, issuer } ) => {
   const { authState } = useOktaAuth();
 
-  if (authState.isPending) {
+  if ( authState.isPending ) {
     return <div>Loading...</div>;
   }
   return authState.isAuthenticated ?
-    <Redirect to={{ pathname: '/' }} /> :
+    <Redirect to={{ pathname: "/" }} /> :
 
     <Container>
       <Header></Header>

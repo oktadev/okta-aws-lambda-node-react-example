@@ -1,33 +1,33 @@
-import React, { useState } from 'react';
-import OktaAuth from '@okta/okta-auth-js';
-import { useOktaAuth } from '@okta/okta-react';
-import { Form, Button, Row, Col } from 'react-bootstrap'
+import React, { useState } from "react";
+import OktaAuth from "@okta/okta-auth-js";
+import { useOktaAuth } from "@okta/okta-react";
+import { Form, Button, Row, Col } from "react-bootstrap";
 
-const LoginForm = ({ baseUrl, issuer }) => {
+const LoginForm = ( { baseUrl, issuer } ) => {
 
   const { authService } = useOktaAuth();
-  const [sessionToken, setSessionToken] = useState();
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  const [ sessionToken, setSessionToken ] = useState();
+  const [ username, setUsername ] = useState();
+  const [ password, setPassword ] = useState();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = ( e ) => {
     e.preventDefault();
-    const oktaAuth = new OktaAuth({ url: baseUrl, issuer: issuer });
-    oktaAuth.signIn({ username, password })
-      .then(res => setSessionToken(res.sessionToken))
-      .catch(err => console.log('Found an error', err));
+    const oktaAuth = new OktaAuth( { url: baseUrl, issuer: issuer } );
+    oktaAuth.signIn( { username, password } )
+      .then( res => setSessionToken( res.sessionToken ) )
+      .catch( err => console.log( "Found an error", err ) );
   };
 
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
+  const handleUsernameChange = ( e ) => {
+    setUsername( e.target.value );
   };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+  const handlePasswordChange = ( e ) => {
+    setPassword( e.target.value );
   };
 
-  if (sessionToken) {
-    authService.redirect({ sessionToken });
+  if ( sessionToken ) {
+    authService.redirect( { sessionToken } );
     return null;
   }
 
@@ -49,11 +49,12 @@ const LoginForm = ({ baseUrl, issuer }) => {
 
           <Button variant="primary" type="submit">
             Login
-        </Button>
+          </Button>
 
         </Form>
       </Col>
     </Row>
   );
 };
+
 export default LoginForm;

@@ -1,28 +1,28 @@
-import React from 'react';
+import React from "react";
 
-import '../cards.css';
+import "../cards.css";
 
-const Card = ({ card }) => {
+const Card = ( { card } ) => {
 
-    var content;
+  let content;
 
-    if (card.visible) {
-        var cardClass = "card rank-" + card.rank.toLowerCase() + " " + card.suit;
-        content =
+  if ( card.visible ) {
+    const cardClass = "card rank-" + card.rank.toLowerCase() + " " + card.suit;
+    content =
             <div className={cardClass}>
-                <div className="rank">{card.rank}</div>
-                <div className="suit"></div>
+              <div className="rank">{card.rank}</div>
+              <div className="suit"></div>
             </ div>;
-    }
-    else {
-        content = <div className="card back">*</div>
-    }
+  }
+  else {
+    content = <div className="card back">*</div>;
+  }
 
-    return (
-        <div className="playingCards faceImages">
-            {content}
-        </div>
-    );
+  return (
+    <div className="playingCards faceImages">
+      {content}
+    </div>
+  );
 };
 
 export default Card;

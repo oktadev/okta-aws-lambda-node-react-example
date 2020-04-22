@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import Header from '../Components/Header'
-import { Container, Row, Col, Card } from 'react-bootstrap'
+import Header from "../Components/Header";
+import { Container, Row, Col, Card } from "react-bootstrap";
 
 const Home = () => {
 
@@ -22,10 +22,10 @@ const Home = () => {
 
       <Row >
         <Col sm={12} className="text-center">
-          <Card style={{ width: '21.5em', margin: '0 auto' }}>
+          <Card style={{ width: "21.5em", margin: "0 auto" }}>
             <Card.Header>
               Already have an Okta Account?
-              </Card.Header>
+            </Card.Header>
             <Card.Body>
               <Link to='/Game'>Play Now</Link>
             </Card.Body>
