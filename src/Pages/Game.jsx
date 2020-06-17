@@ -55,15 +55,15 @@ class Game extends Component {
       } );
   }
 
-  newGameClick() {
+  newGameClick = () => {
     this.gameBoardLoaded();
   }
 
-  gameBoardLoaded() {
+  gameBoardLoaded = () => {
     this.setState( { gameState: "playing" } );
   }
 
-  endGame( score ) {
+  endGame = ( score ) => {
     this.setState( { gameState: "finished", lastScore: score } );
   }
 
